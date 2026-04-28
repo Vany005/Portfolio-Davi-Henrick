@@ -231,8 +231,9 @@ img {
 }
 
 .sobre-foto img {
-    width: 359px;
-    height: 359px;
+    width: 100%;
+    max-width: 350px; /* Limita o tamanho máximo no PC */
+    aspect-ratio: 1 / 1; /* Força a imagem a ser um quadrado perfeito antes de arredondar */
     border-radius: 50%;
     object-fit: cover;
     animation-name: floating;
@@ -583,4 +584,119 @@ footer {
     color: var(--cor-texto-secundario);
     font-size: 0.9em;
     margin: 5px 0;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Telas menores que 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustando o Menu (Navbar) */
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap; /* Permite que os links pulem de linha se faltar espaço */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* 2. Empilhando a seção Sobre */
+    .sobre-container {
+        flex-direction: column-reverse; /* Coloca o texto embaixo e a foto em cima */
+        align-items: center;
+        text-align: center;
+    }
+
+    .sobre-foto {
+        margin-bottom: 30px;
+    }
+
+    /* 3. Consertando a Linha do Tempo (Trajetória) */
+    /* Move a linha principal toda para a esquerda */
+    .linha-do-tempo ul::before {
+        left: 20px;
+    }
+
+    .timeline-evento {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px; /* Dá espaço para as bolinhas ficarem na esquerda */
+        margin-bottom: 40px;
+    }
+
+    /* Faz os quadros de conteúdo ocuparem a tela toda */
+    .timeline-conteudo {
+        width: 100%;
+    }
+
+    /* Alinha todas as bolinhas da timeline na nova linha à esquerda */
+    .timeline-evento::after {
+        left: 20px;
+        top: 15px;
+    }
+
+    /* Remove o alinhamento à direita dos itens pares (tudo fica na esquerda no mobile) */
+    .linha-do-tempo ul li:nth-child(even) {
+        justify-content: flex-start;
+    }
+
+    /* 4. Prevenindo overflow na grade de Projetos */
+    .projetos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* 5. Empilhando os botões do Footer */
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-link {
+        margin: 0;
+        width: 100%; /* Botões ocupam a largura toda no celular */
+    }
+
+    /* --- CSS DO MENU RESPONSIVO --- */
+    nav {
+        flex-wrap: wrap; /* Permite que o menu caia para a linha de baixo */
+        padding: 15px 20px;
+    }
+
+    /* Estilizando os 3 tracinhos */
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-hamburguer .linha {
+        width: 30px;
+        height: 3px;
+        background-color: var(--cor-acento);
+        border-radius: 5px;
+    }
+
+    /* Escondendo a lista de links por padrão no celular */
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--cor-fundo-principal); /* Fundo sólido para o menu */
+        padding: 20px 0;
+        margin-top: 15px;
+        border-radius: 10px;
+        border: 1px solid rgba(53, 252, 236, 0.2);
+    }
+
+    /* Essa classe 'ativo' será colocada pelo JavaScript quando clicar */
+    nav ul.ativo {
+        display: flex;
+    }
 }

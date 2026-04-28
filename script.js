@@ -81,3 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const menuHamburguer = document.querySelector('.menu-hamburguer');
+const menuLista = document.querySelector('nav ul');
+
+menuHamburguer.addEventListener('click', () => {
+    menuLista.classList.toggle('ativo');
+});
