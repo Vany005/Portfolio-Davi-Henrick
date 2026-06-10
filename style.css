@@ -586,12 +586,10 @@ footer {
     margin: 5px 0;
 }
 
-/* =========================================
-   RESPONSIVIDADE (Telas menores que 768px)
-   ========================================= */
+/* RESPONSIVIDADE  */
 @media (max-width: 768px) {
     
-    /* 1. Ajustando o Menu (Navbar) */
+ 
     nav {
         flex-direction: column;
         padding: 15px;
@@ -599,14 +597,13 @@ footer {
     }
     
     nav ul {
-        flex-wrap: wrap; /* Permite que os links pulem de linha se faltar espaço */
         justify-content: center;
         gap: 15px;
     }
 
-    /* 2. Empilhando a seção Sobre */
+   
     .sobre-container {
-        flex-direction: column-reverse; /* Coloca o texto embaixo e a foto em cima */
+        flex-direction: column-reverse; 
         align-items: center;
         text-align: center;
     }
@@ -615,8 +612,6 @@ footer {
         margin-bottom: 30px;
     }
 
-    /* 3. Consertando a Linha do Tempo (Trajetória) */
-    /* Move a linha principal toda para a esquerda */
     .linha-do-tempo ul::before {
         left: 20px;
     }
@@ -624,32 +619,28 @@ footer {
     .timeline-evento {
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 50px; /* Dá espaço para as bolinhas ficarem na esquerda */
+        padding-left: 50px; 
         margin-bottom: 40px;
     }
-
-    /* Faz os quadros de conteúdo ocuparem a tela toda */
     .timeline-conteudo {
         width: 100%;
     }
 
-    /* Alinha todas as bolinhas da timeline na nova linha à esquerda */
     .timeline-evento::after {
         left: 20px;
         top: 15px;
     }
 
-    /* Remove o alinhamento à direita dos itens pares (tudo fica na esquerda no mobile) */
+
     .linha-do-tempo ul li:nth-child(even) {
         justify-content: flex-start;
     }
 
-    /* 4. Prevenindo overflow na grade de Projetos */
+    
     .projetos-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
-    /* 5. Empilhando os botões do Footer */
     .footer-links {
         display: flex;
         flex-direction: column;
@@ -658,16 +649,16 @@ footer {
     
     .footer-link {
         margin: 0;
-        width: 100%; /* Botões ocupam a largura toda no celular */
+        width: 100%; 
     }
 
-    /* --- CSS DO MENU RESPONSIVO --- */
+    
     nav {
-        flex-wrap: wrap; /* Permite que o menu caia para a linha de baixo */
+        flex-wrap: wrap; 
         padding: 15px 20px;
     }
 
-    /* Estilizando os 3 tracinhos */
+
     .menu-hamburguer {
         display: flex;
         flex-direction: column;
@@ -682,20 +673,20 @@ footer {
         border-radius: 5px;
     }
 
-    /* Escondendo a lista de links por padrão no celular */
+   
     nav ul {
         display: none; 
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background-color: var(--cor-fundo-principal); /* Fundo sólido para o menu */
+        background-color: var(--cor-fundo-principal); 
         padding: 20px 0;
         margin-top: 15px;
         border-radius: 10px;
         border: 1px solid rgba(53, 252, 236, 0.2);
     }
 
-    /* Essa classe 'ativo' será colocada pelo JavaScript quando clicar */
+   
     nav ul.ativo {
         display: flex;
     }
