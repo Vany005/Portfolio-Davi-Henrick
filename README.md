@@ -6,7 +6,7 @@ Este projeto é um portfólio moderno, responsiva e clean, desenvolvido para des
 
 ## 🔗 Link do Projeto
 Você pode acessar o portfólio online aqui: 
-👉 [**Visualizar Portfólio**](https://vany005.github.io/Portfolio-Davi-Henrick/)
+👉 [**Visualizar Portfólio**](https://davihenrick-analytics.vercel.app)
 
 ---
 
