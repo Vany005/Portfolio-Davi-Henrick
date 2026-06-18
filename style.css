@@ -88,12 +88,12 @@
 
     50% {
         transform: translateY(-8px);
-        box-shadow: 0 25px 15px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 20px rgb(142, 44, 233);
     }
 
     100% {
         transform: translateY(0);
-        box-shadow: 0 0 20px rgb(142, 44, 233);
+        box-shadow: 0 5px 15px 0 rgba(118, 240, 238, 0.6);
     }
 }
 
@@ -263,6 +263,7 @@ img {
 
 .secao-habilidades {
     padding: 60px 0;
+    scroll-margin-top: 100px;
 }
 
 .habilidades-container {
@@ -432,6 +433,13 @@ img {
     font-size: 1.2em;
 }
 
+.timeline-conteudo h4 {
+    color: rgba(255, 255, 255, 0.6); 
+    font-size: 0.85rem;              
+    font-weight: 500;                
+    margin-bottom: 10px;             
+}
+
 .timeline-conteudo p {
     color: var(--cor-texto-secundario);
     line-height: 1.6;
@@ -460,6 +468,10 @@ img {
     z-index: 10;
 }
 
+.secao-trajetoria {
+    scroll-margin-top: 160px;
+}
+
 .projeto-card {
     background: rgba(15, 15, 20, 0.415) !important;
     backdrop-filter: blur(12px);
@@ -468,12 +480,15 @@ img {
     border-radius: 15px;
     transition: all 0.4s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .secao-projetos {
     background-color: transparent !important;
     padding: 60px 20px;
     width: 100%;
+    scroll-margin-top: 100px;
 }
 
 .projetos-grid {
@@ -491,14 +506,17 @@ img {
 
 .card-imagem {
     width: 100%;
-    height: 200px;
+    height: auto;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-imagem img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
@@ -506,7 +524,30 @@ img {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1; 
+}
+
+.btn-detalhes {
+    background: transparent;
+    border: 1px solid var(--cor-acento);
+    color: var(--cor-acento);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 15px;
+}
+
+.btn-detalhes:hover {
+    background-color: #6F1D90;
+    color: #f0f0f0;
+    border-color: #6F1D90;
+    box-shadow: 0 0 15px rgba(111, 29, 144, 0.5);
 }
 
 .card-info h3 a.card-link {
@@ -529,7 +570,7 @@ img {
 .card-info p {
     color: var(--cor-texto-secundario);
     margin-bottom: 20px;
-    flex-grow: 1;
+    margin-top: auto; 
 }
 
 .main-footer {
